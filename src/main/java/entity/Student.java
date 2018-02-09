@@ -56,4 +56,25 @@ public class Student {
     public void setAge(int age) {
         this.age = age;
     }
+
+    @Embedded/**Аннотация класса StudentAddress чтобы с мапить поля с этого класса в БД students*/
+    private StudentAddres studentAddres;
+
+    public StudentAddres getStudentAddres() {
+        return studentAddres;
+    }
+
+    public void setStudentAddres(StudentAddres studentAddres) {
+        this.studentAddres = studentAddres;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", age=" + age +
+                '}';
+    }
 }
