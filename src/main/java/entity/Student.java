@@ -12,7 +12,7 @@ public class Student {
 
     /*Анатациями указал что данная переменная будет соответствовать id в таблице и будет автоинкрементироваться*/
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
 
