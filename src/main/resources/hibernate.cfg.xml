@@ -32,6 +32,10 @@
 
 
         <mapping class="entity.Student"></mapping>
+        <mapping class="entity.Subject"></mapping>
+        <mapping class="entity.Exams"></mapping>
+
+
 
         <!--
         <mapping resource="com/hillel/hibernate/entity/Student.hbm.xml"></mapping>

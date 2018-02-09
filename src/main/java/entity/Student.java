@@ -1,6 +1,7 @@
 package entity;
 
 import javax.persistence.*;
+import java.util.Set;
 
 /**
  * @Entity - данная аннатация говорит Hibirnate что этот клас является аналогом таблицы БД
@@ -24,6 +25,12 @@ public class Student {
 
     @Column(name = "age")
     private int age;
+
+    @Embedded/**Аннотация класса StudentAddress чтобы с мапить поля с этого класса в БД students*/
+    private StudentAddres studentAddres;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "student")
+    private Set<Exams>  exams;
 
     public int getId() {
         return id;
@@ -57,8 +64,7 @@ public class Student {
         this.age = age;
     }
 
-    @Embedded/**Аннотация класса StudentAddress чтобы с мапить поля с этого класса в БД students*/
-    private StudentAddres studentAddres;
+
 
     public StudentAddres getStudentAddres() {
         return studentAddres;
@@ -66,6 +72,14 @@ public class Student {
 
     public void setStudentAddres(StudentAddres studentAddres) {
         this.studentAddres = studentAddres;
+    }
+
+    public Set<Exams> getExams() {
+        return exams;
+    }
+
+    public void setExams(Set<Exams> exams) {
+        this.exams = exams;
     }
 
     @Override
